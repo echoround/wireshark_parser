@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+   <PropertyGroup>
+	  <ContentSQLiteInteropFiles>true</ContentSQLiteInteropFiles>
+	  <CopySQLiteInteropFiles>false</CopySQLiteInteropFiles>
+	  <CleanSQLiteInteropFiles>false</CleanSQLiteInteropFiles>
+	  <CollectSQLiteInteropFiles>false</CollectSQLiteInteropFiles>
+   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Database\PcapParserDB.db" />
+    <None Remove="PcapParserDB.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net6.0\Database\PcapParserDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\PcapParserDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="FluentCommandLineParser" Version="1.4.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="PcapDotNet" Version="0.10.2" />
+    <PackageReference Include="PcapDotNet.Packets" Version="1.0.4.1" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
+    <PackageReference Include="SerilogTimings" Version="3.0.0" />
+    <PackageReference Include="SharpPcap" Version="6.2.1" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.116" />
+    <PackageReference Include="Uno.UI" Version="4.4.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
