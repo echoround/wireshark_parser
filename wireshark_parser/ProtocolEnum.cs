@@ -20,7 +20,7 @@ internal class ProtocolHelper
     internal static string ToFilterSyntax(Protocol protocol) => protocol switch
     {
         Protocol.ICMP => "icmp",
-        Protocol.FTP => "ip and tcp port 20",
+        Protocol.FTP => "ip and tcp port 21",
         Protocol.HTTP => "ip and tcp port 80",
         Protocol.HTTPS => "ip and tcp port 443",
         _ => throw new ArgumentOutOfRangeException(nameof(protocol), $"Not expected protocol name: {protocol}"),

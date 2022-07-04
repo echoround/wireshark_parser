@@ -8,6 +8,14 @@ namespace wireshark_parser;
 
 internal class DataAccessSQLite
 {
+    internal static int CountPackets()
+    {
+        using IDbConnection connection = new SQLiteConnection(LoadConnectionString());
+
+        var output = connection.Query<Packet>("select * from Packets", new DynamicParameters());
+        return output.ToList().Count;
+    }
+
     internal static List<Packet> LoadPackets()
     {
         using IDbConnection connection = new SQLiteConnection(LoadConnectionString());
