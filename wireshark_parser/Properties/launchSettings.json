@@ -1,8 +1,7 @@
 {
   "profiles": {
     "wireshark_parser": {
-      "commandName": "Project",
-      "commandLineArgs": "-p \"C:\\Users\\Admin\\Desktop\\Github\\wireshark_parser\\wireshark_parser\\wireshark_parser\\PcapFiles\\VM2wire1\"\r\n-f \"http\""
+      "commandName": "Project"
     }
   }
 }
